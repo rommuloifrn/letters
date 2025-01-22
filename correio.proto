@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+
+service Correio {
+    // recebe um endereço do cliente e retorna as respectivas cartas
+    rpc GetCartas(Endereco) returns (stream Carta) {}
+
+    // recebe uma carta do cliente e retorna o endereço
+    rpc SendCartas(Carta) returns (Endereco) {}
+
+}
+
+message Endereco {
+    required string numero = 1;
+}
+
+message Carta {
+    required string texto = 1;
+    
+}
