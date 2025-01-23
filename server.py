@@ -5,7 +5,7 @@ from concurrent import futures
 
 class CorreioServicer(correio_pb2_grpc.CorreioServicer):
 
-    cartas = []
+    cartas = ['pequende']
 
     def SendCartas(self, request, context):
         carta = request.texto
